@@ -1,0 +1,32 @@
+'''
+This program will prompt the user to select shapes, calculate
+the area of that shape, and print the area to the user.
+'''
+
+from math import pi
+from time import sleep
+from datetime import datetime
+
+now = datetime.now()
+print("The calculator has been initialized!")
+print("%s/%s/%s %s:%s") % (now.month, now.day, now.year, now.hour, now.minute)
+sleep(1)
+hint = "Don't forget to include the correct units! \nExiting..."
+option = raw_input("Enter C for Circle or T for Triangle: ")
+option = option.upper()
+
+if option == 'C':
+    radius = float(raw_input("Input the radius: "))
+    area = pi * radius**2
+    print("the pie is baking...")
+    sleep(1)
+    print("area: %.2f. \n%s") % (area, hint)
+elif option == 'T':
+    base = float(raw_input("Input the base: "))
+    height = float(raw_input("Input the height: "))
+    area = (0.5) * base * height
+    print("Uni Bi Tri..")
+    sleep(1)
+    print("area : %.2f. \n%s") % (area, hint)
+else:
+    print("You have entered garbage. The program will now exit.")
